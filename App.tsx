@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Islamic App!</Text>
+      <Text>Islamic App!!</Text>
       <StatusBar style="auto" />
     </View>
   );
