@@ -1,6 +1,20 @@
 module.exports = {
-  extends: ['airbnb', 'prettier'],
-  plugins: ['prettier'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-native/all',
+    'standard',
+    'standard-jsx',
+    'prettier',
+  ],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-native',
+    'react-hooks',
+    'import',
+    'prettier',
+  ],
   rules: {
     'prettier/prettier': [
       'error',

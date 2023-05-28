@@ -8,10 +8,10 @@ import {
   RecyclerListView,
 } from 'recyclerlistview'
 import { initDatabase } from './database'
-import { groupBy } from './utils/arr'
+import { groupBy } from './src/core/utils/arr'
 import { QuranScreen } from './screens/QuranScreen'
 
-let { width, height } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 
 function Screens() {
   const [data, setData] = useState([])
@@ -97,9 +97,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
+    backgroundColor: '#fff',
+    flex: 1,
     justifyContent: 'center',
   },
 })
