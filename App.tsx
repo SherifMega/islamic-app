@@ -9,6 +9,8 @@ import { useFonts } from 'expo-font'
 // import { groupBy } from './src/core/utils/arr'
 import QuranScreen from './src/modules/quran/QuranScreen'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import * as SplashScreen from 'expo-splash-screen'
+import AnimatedSplashScreen from './src/modules/splash/AnimatedSplashScreen'
 
 // const { width, height } = Dimensions.get('window')
 // const extractKey = (key) => `${key}`
@@ -70,6 +72,11 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 //   )
 // }
 
+// Instruct SplashScreen not to hide yet, we want to do this manually
+SplashScreen.preventAutoHideAsync().catch(() => {
+  /* reloading the app might trigger some race conditions, ignore them */
+})
+
 export default function App() {
   const [loaded] = useFonts({
     Uthmanic: require('./assets/fonts/Uthmanic.ttf'),
@@ -81,8 +88,10 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView>
-      <QuranScreen />
-    </SafeAreaView>
+    <AnimatedSplashScreen>
+      <SafeAreaView>
+        <QuranScreen />
+      </SafeAreaView>
+    </AnimatedSplashScreen>
   )
 }
