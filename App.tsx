@@ -6,6 +6,8 @@ import { useFonts } from 'expo-font'
 // import { initDatabase } from './database'
 // import { groupBy } from './src/core/utils/arr'
 import QuranScreen from './src/modules/quran/QuranScreen'
+import * as SplashScreen from 'expo-splash-screen'
+import AnimatedSplashScreen from './src/modules/splash/AnimatedSplashScreen'
 
 // const { width, height } = Dimensions.get('window')
 // const extractKey = (key) => `${key}`
@@ -67,6 +69,11 @@ import QuranScreen from './src/modules/quran/QuranScreen'
 //   )
 // }
 
+// Instruct SplashScreen not to hide yet, we want to do this manually
+SplashScreen.preventAutoHideAsync().catch(() => {
+  /* reloading the app might trigger some race conditions, ignore them */
+})
+
 export default function App() {
   const [loaded] = useFonts({
     Uthmanic: require('./assets/fonts/Uthmanic.ttf'),
@@ -77,5 +84,9 @@ export default function App() {
     return null
   }
 
-  return <QuranScreen />
+  return (
+    <AnimatedSplashScreen>
+      <QuranScreen />
+    </AnimatedSplashScreen>
+  )
 }
