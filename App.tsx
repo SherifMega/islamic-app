@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-color-literals */
+/* eslint-disable react-native/no-inline-styles */
 // import { useCallback, useEffect, useState } from 'react'
 // import { Dimensions, FlatList, StyleSheet, View } from 'react-native'
 import { useFonts } from 'expo-font'
@@ -6,6 +8,7 @@ import { useFonts } from 'expo-font'
 // import { initDatabase } from './database'
 // import { groupBy } from './src/core/utils/arr'
 import QuranScreen from './src/modules/quran/QuranScreen'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 // const { width, height } = Dimensions.get('window')
 // const extractKey = (key) => `${key}`
@@ -77,5 +80,9 @@ export default function App() {
     return null
   }
 
-  return <QuranScreen />
+  return (
+    <SafeAreaView>
+      <QuranScreen />
+    </SafeAreaView>
+  )
 }

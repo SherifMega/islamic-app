@@ -1,9 +1,12 @@
-export const groupBy = (myArr: Array<object>, groupKey: string) => {
-  return myArr.reduce((obj, curr) => {
-    if (!(curr[groupKey] in obj)) {
-      obj[curr[groupKey]] = []
+export const groupBy = <T extends object>(
+  myArr: Array<T>,
+  groupKey: keyof T
+) => {
+  return myArr.reduce((obj: { [key: string]: Array<T> }, curr: T) => {
+    if (!((curr[groupKey] as string) in obj)) {
+      obj[curr[groupKey] as string] = []
     }
-    obj[curr[groupKey]].push(curr)
+    obj[curr[groupKey] as string].push(curr)
     return obj
   }, {})
 }
