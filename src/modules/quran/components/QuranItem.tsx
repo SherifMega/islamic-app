@@ -1,6 +1,3 @@
-/* eslint-disable react-native/sort-styles */
-/* eslint-disable react-native/no-color-literals */
-/* eslint-disable react-native/no-color-literals */
 import { Dimensions, StyleSheet, Text, View } from 'react-native'
 
 function QuranItem({
@@ -72,21 +69,21 @@ const styles = StyleSheet.create({
     flexShrink: 1,
   },
   line: {
-    width: '100%',
     display: 'flex',
     flexDirection: 'row-reverse',
     justifyContent: 'center',
+    width: '100%',
   },
   lines: {
     // paddingHorizontal: 3,
   },
   page: {
-    width: '100%',
-    paddingHorizontal: 5,
     display: 'flex',
     flex: 1,
     justifyContent: 'space-between',
+    paddingHorizontal: 5,
     shadowColor: '#000000',
+    width: '100%',
     // shadowOffset: {
     //   width: 0,
     //   height: 8,

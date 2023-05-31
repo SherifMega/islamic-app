@@ -9,7 +9,7 @@ export async function initDatabase() {
   if (!(await FileSystem.getInfoAsync(sqlDir + internalDbName)).exists) {
     await FileSystem.makeDirectoryAsync(sqlDir, { intermediates: true })
     const asset = Asset.fromModule(
-      // eslint-disable-next-line import/no-dynamic-require, global-require
+      // eslint-disable-next-line
       require(`./assets/data/frqnah3.sqlite`)
     )
     await FileSystem.downloadAsync(asset.uri, sqlDir + internalDbName)

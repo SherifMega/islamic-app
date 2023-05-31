@@ -1,5 +1,3 @@
-/* eslint-disable react-native/no-color-literals */
-/* eslint-disable react-native/no-inline-styles */
 import { FlashList } from '@shopify/flash-list'
 import { Dimensions, Text } from 'react-native'
 import QuranItem from './components/QuranItem'

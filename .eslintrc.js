@@ -30,6 +30,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off',
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
+    'react-native/no-color-literals': 'off',
 
     // disallow React to be incorrectly marked as unused
     'react/jsx-uses-react': 'off',

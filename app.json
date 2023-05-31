@@ -7,24 +7,17 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "backgroundColor": "#000",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#000"
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.islamicapp",
-      "splash": {
-        "image": "./assets/splash.png",
-        "resizeMode": "cover",
-        "backgroundColor": "#000",
-        "tabletImage": "./assets/splash-tablet.png"
-      }
+      "bundleIdentifier": "com.islamicapp"
     },
     "android": {
       "adaptiveIcon": {
