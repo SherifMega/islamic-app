@@ -10,6 +10,7 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
     'react',
+    'simple-import-sort',
     'react-native',
     'react-hooks',
     'import',
@@ -38,6 +39,57 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'global-require': 'off',
     'import/no-extraneous-dependencies': 'off',
+
+    'simple-import-sort/exports': ['error'],
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // type imports.
+          ['\\u0000$'],
+          // packages: `react` and `expo` related packages come first
+          ['^react', 'react', 'expo', '^@?\\w'],
+          // side effect imports.
+          ['^\\u0000'],
+          // $root imports
+          ['^\\$root'],
+          // $src imports
+          ['^\\$src/core'],
+          ['^\\$src/modules'],
+          ['^\\$assets'],
+          // relative imports: parents, children, same-folder  `..` and `.` last
+          [
+            '^\\.\\.(?!/?$)',
+            '^\\.\\./?$',
+            '^\\./(?=.*/)(?!/?$)',
+            '^\\.(?!/?$)',
+            '^\\./?$',
+          ],
+        ],
+      },
+    ],
+
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          {
+            group: ['.*'],
+            message: 'Please use absolute import instead',
+          },
+        ],
+        paths: [
+          {
+            name: 'expo',
+            message: "import from 'expo-*' modules instead",
+          },
+          {
+            name: 'styled-components',
+            message: "import styled from  '@styled-components/native'",
+          },
+        ],
+      },
+    ],
 
     'react/jsx-filename-extension': [
       2,

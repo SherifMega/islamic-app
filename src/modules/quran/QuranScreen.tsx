@@ -1,9 +1,12 @@
-import { FlashList } from '@shopify/flash-list'
-import { Dimensions, Text } from 'react-native'
-import QuranItem from './components/QuranItem'
 import { useCallback, useEffect, useState } from 'react'
-import { groupBy } from '../../core/utils/arr'
-import { initDatabase } from '../../../database'
+import { Dimensions, Text } from 'react-native'
+import { FlashList } from '@shopify/flash-list'
+
+import { initDatabase } from '$root/database'
+
+import { groupBy } from '$src/core/utils/arr'
+
+import QuranItem from '$src/modules/quran/components/QuranItem'
 
 function QuranScreen() {
   const [wordsGroupedByPageId, setWordsGroupedByPageId] = useState<{

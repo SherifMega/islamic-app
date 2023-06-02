@@ -1,7 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import * as SQLite from 'expo-sqlite'
-import * as FileSystem from 'expo-file-system'
 import { Asset } from 'expo-asset'
+import * as FileSystem from 'expo-file-system'
+import * as SQLite from 'expo-sqlite'
 
 export async function initDatabase() {
   const internalDbName = 'frqnah3.sqlite'
