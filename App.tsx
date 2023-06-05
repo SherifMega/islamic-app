@@ -1,6 +1,8 @@
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useFonts } from 'expo-font'
 
+import ThemeManager from '$src/core/themes/ThemeManager'
+
 import QuranScreen from '$src/modules/quran/QuranScreen'
 
 export default function App() {
@@ -15,7 +17,9 @@ export default function App() {
 
   return (
     <SafeAreaView>
-      <QuranScreen />
+      <ThemeManager>
+        <QuranScreen />
+      </ThemeManager>
     </SafeAreaView>
   )
 }
