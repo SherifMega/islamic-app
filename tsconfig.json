@@ -8,6 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
     "jsx": "react-native",
     "typeRoots": [
       "./node_modules/@types"

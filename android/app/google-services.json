@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "705521799218",
+    "project_id": "islamic-app-562fe",
+    "storage_bucket": "islamic-app-562fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705521799218:android:026fa77c7f754f35146c2b",
+        "android_client_info": {
+          "package_name": "com.islamicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705521799218-qdigcchbuvssmjj5k0iuhjrvnl5vdqcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHeqd2PZhtvhSWPwxMlok04DDGEkiWP0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705521799218-qdigcchbuvssmjj5k0iuhjrvnl5vdqcd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "705521799218-qt40ggs176p9q6q2frv85et6j8sl1m1n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.islamicapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
