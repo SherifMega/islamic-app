@@ -15,6 +15,7 @@ module.exports = {
     'react-hooks',
     'import',
     'prettier',
+    'lodash',
   ],
   rules: {
     'prettier/prettier': [
@@ -31,7 +32,6 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off',
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
-    'react-native/no-color-literals': 'off',
 
     // disallow React to be incorrectly marked as unused
     'react/jsx-uses-react': 'off',
@@ -39,6 +39,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'global-require': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'lodash/import-scope': [2],
+    'arrow-body-style': 'off',
 
     'simple-import-sort/exports': ['error'],
     'simple-import-sort/imports': [
@@ -74,6 +76,13 @@ module.exports = {
       {
         patterns: [
           {
+            group: ['lodash-es/*'],
+            message: "Please use the default import from 'lodash' instead.",
+          },
+        ],
+        // eslint-disable-next-line
+        patterns: [
+          {
             group: ['.*'],
             message: 'Please use absolute import instead',
           },
@@ -86,6 +95,11 @@ module.exports = {
           {
             name: 'styled-components',
             message: "import styled from  '@styled-components/native'",
+          },
+          {
+            name: 'styled-components/native',
+            importNames: ['useTheme'],
+            message: "import { useTheme } from '$src/core/themes/ThemeContext",
           },
         ],
       },
