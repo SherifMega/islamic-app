@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useFonts } from 'expo-font'
 
-import QuranScreen from '$src/modules/quran/QuranScreen'
+import QuranScreen from '$src/modules/quran/screens/QuranScreen'
 
 export default function App() {
   const [loaded] = useFonts({
