@@ -17,29 +17,15 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.islamicapp",
-      "googleServicesFile": "./GoogleService-Info.plist"
+      "bundleIdentifier": "com.islamicapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.islamicapp",
-      "googleServicesFile": "./google-services.json"
+      "package": "com.islamicapp"
     },
-    "plugins": [
-      "@react-native-firebase/app",
-      "@react-native-firebase/crashlytics",
-      [
-        "expo-build-properties",
-        {
-          "ios": {
-            "useFrameworks": "static"
-          }
-        }
-      ]
-    ],
     "web": {
       "favicon": "./assets/favicon.png"
     },
