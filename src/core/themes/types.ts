@@ -26,7 +26,7 @@ export type DeviceDimensions = {
   height: number
 }
 export type CustomColorMap = {
-  defaultText: string
+  main: string
 }
 export type DimensionMap = {
   window: DeviceDimensions

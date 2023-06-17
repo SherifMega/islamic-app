@@ -2,12 +2,12 @@ import { ColorMap, CustomColorMap } from '$src/core/themes/types'
 
 // custom colors for light mode
 export const lightThemeColors: CustomColorMap = {
-  defaultText: '#000',
+  main: '#fff',
 }
 
 // custom colors for dark mode
 export const darkThemeColors: CustomColorMap = {
-  defaultText: '#fff',
+  main: '#000',
 }
 
 // color palette for light theme

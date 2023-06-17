@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { useFonts } from 'expo-font'
 
 import { Monitoring } from '$src/core/services/monitoring/Monitoring'
@@ -22,10 +22,10 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaProvider>
       <ThemeManager>
         <QuranScreen />
       </ThemeManager>
-    </SafeAreaView>
+    </SafeAreaProvider>
   )
 }

@@ -4,6 +4,7 @@ import { FlashList } from '@shopify/flash-list'
 
 import { initDatabase } from '$root/database'
 
+import ScreenContainer from '$src/core/kit/containers/ScreenContainer'
 import { groupBy } from '$src/core/utils/arr.utils'
 
 import QuranItem from '$src/modules/quran/components/QuranPage'
@@ -71,14 +72,16 @@ function QuranScreen() {
   }, [])
 
   return Object.keys(wordsGroupedByPageId).length > 0 ? (
-    <FlashList
-      data={QURAN_PAGES}
-      horizontal
-      pagingEnabled
-      renderItem={renderItem}
-      estimatedItemSize={Dimensions.get('window').width}
-      initialScrollIndex={QURAN_PAGES_NUMBER - 1}
-    />
+    <ScreenContainer>
+      <FlashList
+        data={QURAN_PAGES}
+        horizontal
+        pagingEnabled
+        renderItem={renderItem}
+        estimatedItemSize={Dimensions.get('window').width}
+        initialScrollIndex={QURAN_PAGES_NUMBER - 1}
+      />
+    </ScreenContainer>
   ) : null
 }
 
