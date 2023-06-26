@@ -6,7 +6,7 @@ export const groupBy = <T extends object>(
     if (!((curr[groupKey] as string) in obj)) {
       obj[curr[groupKey] as string] = []
     }
-    obj[curr[groupKey] as string].push(curr)
+    obj[curr[groupKey] as string]?.push(curr)
     return obj
   }, {})
 }

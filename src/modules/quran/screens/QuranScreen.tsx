@@ -25,7 +25,7 @@ function QuranScreen() {
         <QuranItem
           pageId={`${pageId}`}
           wordsGroupedByLines={groupBy(
-            wordsGroupedByPageId[pageId],
+            wordsGroupedByPageId[pageId] || [],
             'line_in_page' as keyof Word
           )}
         />
