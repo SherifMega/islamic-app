@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
+import { Bismillah } from '$src/modules/quran/components/Bismillah'
+import { SurahName } from '$src/modules/quran/components/SurahName'
 import { Word } from '$src/modules/quran/models/word.model'
-import { Bismillah } from './Bismillah'
-import { SurahName } from './SurahName'
 
 type LineProp = {
   line: number
@@ -22,7 +22,7 @@ export const Line: React.FC<LineProp> = ({
   const lastWordInLine = lineWords[lineWords.length - 1]
   return (
     <>
-      {firstWordInLine.word_number_in_verse == 1 ? (
+      {firstWordInLine && firstWordInLine.word_number_in_verse === 1 ? (
         <View>
           {firstWordInLine.surah_pre ? (
             <SurahName surahId={firstWordInLine.surah_id} />
@@ -59,34 +59,33 @@ export const Line: React.FC<LineProp> = ({
           )}
         </View>
       </View>
-      {line === linesCount && lastWordInLine.surah_post ? (
-        <SurahName surahId={firstWordInLine.surah_id + 1} />
+      {line === linesCount && lastWordInLine && lastWordInLine.surah_post ? (
+        <SurahName surahId={lastWordInLine.surah_id + 1} />
       ) : null}
     </>
   )
 }
 const styles = StyleSheet.create({
+  ayahNumber: {
+    fontSize: 27,
+  },
+  fullPageWord: {
+    flexGrow: 1,
+    flexShrink: 1,
+  },
   line: {
     display: 'flex',
     flexDirection: 'row-reverse',
     justifyContent: 'center',
     width: '100%',
   },
-  ayahNumber: {
-    fontSize: 27,
-    // textAlign: 'center',
+  shortPageWord: {
+    fontSize: 22,
   },
   word: {
     fontFamily: 'Uthmanic',
     fontSize: 20,
     lineHeight: 40,
     textAlign: 'center',
-  },
-  fullPageWord: {
-    flexGrow: 1,
-    flexShrink: 1,
-  },
-  shortPageWord: {
-    fontSize: 22,
   },
 })

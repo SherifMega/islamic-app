@@ -1,17 +1,18 @@
 import { Dimensions, StyleSheet, Text, View } from 'react-native'
+
+import { Line } from '$src/modules/quran/components/Line'
 import { Word } from '$src/modules/quran/models/word.model'
-import { Line } from './Line'
 
 type QuranPageProps = {
   pageId: string
   wordsGroupedByLines: { [key: string]: Array<Word> }
 }
 
-const getFirstWord = (wordsGroupedByLines: { [key: string]: Array<Word> }) => {
-  for (let line in wordsGroupedByLines) {
-    return wordsGroupedByLines[line][0]
-  }
-  return
+type WordsGroupedByLine = { [key: string]: Array<Word> }
+
+const getFirstWord = (wordsGroupedByLines: WordsGroupedByLine) => {
+  const firstLine = Object.keys(wordsGroupedByLines)[0]
+  return wordsGroupedByLines[firstLine as keyof WordsGroupedByLine]?.[0]
 }
 
 function QuranPage({ pageId, wordsGroupedByLines }: QuranPageProps) {
@@ -39,7 +40,7 @@ function QuranPage({ pageId, wordsGroupedByLines }: QuranPageProps) {
             <Line
               key={line}
               line={+line}
-              lineWords={wordsGroupedByLines[line]}
+              lineWords={wordsGroupedByLines[line] || []}
               pageId={pageId}
               linesCount={Object.keys(wordsGroupedByLines).length}
             />
@@ -55,10 +56,19 @@ function QuranPage({ pageId, wordsGroupedByLines }: QuranPageProps) {
 }
 
 const styles = StyleSheet.create({
+  chapterTitle: {
+    fontSize: 20,
+  },
   container: {
     height: '100%',
     width: Dimensions.get('window').width,
   },
+  footer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  lines: {},
   page: {
     display: 'flex',
     flex: 1,
@@ -72,18 +82,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingTop: 8,
   },
-  chapterTitle: {
-    fontSize: 20,
-  },
   surahTitle: {
     fontFamily: 'SuraNames',
     fontSize: 24,
-  },
-  lines: {},
-  footer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
   },
 })
 

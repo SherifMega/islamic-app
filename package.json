@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "tsc": "tsc --noEmit",
     "lint": "npm run lint:code",
-    "lint:code": "eslint --ext '.js' --ext '.ts' --ext '.tsx' --format ./node_modules/eslint-friendly-formatter ."
+    "lint:code": "eslint --ext '.js' --ext '.ts' --ext '.tsx' --format ./node_modules/eslint-friendly-formatter .",
+    "lint-fix": "eslint --fix --ext '.js' --ext '.ts' --ext '.tsx' --format ./node_modules/eslint-friendly-formatter ."
   },
   "dependencies": {
     "@sentry/react-native": "4.15.2",
@@ -32,6 +33,7 @@
     "react": "18.2.0",
     "react-native": "0.71.8",
     "react-native-safe-area-context": "4.5.0",
+    "react-native-svg": "13.4.0",
     "sentry-expo": "~6.2.0",
     "styled-components": "^5.3.10"
   },

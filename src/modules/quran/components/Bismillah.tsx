@@ -1,22 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+
+import BismillahIcon from '$src/modules/quran/components/BismillahIcon'
 
 export const Bismillah = () => (
   <View style={styles.bismillah}>
-    <Text style={styles.bismillahText}>
-      بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ
-    </Text>
+    <BismillahIcon />
   </View>
 )
 
 const styles = StyleSheet.create({
   bismillah: {
+    alignItems: 'center',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
-  },
-  bismillahText: {
-    fontFamily: 'Uthmanic',
-    fontSize: 20,
-    lineHeight: 40
   },
 })
