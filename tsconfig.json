@@ -1,4 +1,57 @@
 {
-  "compilerOptions": {},
-  "extends": "expo/tsconfig.base"
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./",
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": true,
+    "jsx": "react-native",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "lib": [
+      "es2017"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitHelpers": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "paths": {
+      "*": [
+        "types/*"
+      ],
+      "expo": [
+        "../node_modules/@types/expo",
+        "../node_modules/expo"
+      ],
+      "$src/*": [
+        "src/*"
+      ],
+      "$assets/*": [
+        "assets/*"
+      ],
+      "$root/*": [
+        "./*"
+      ],
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "target": "es2017",
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "dist/__mocks__",
+    "reports",
+  ],
+  "extends": "expo/tsconfig.base.json",
+  "useDefineForClassFields": true,
+  "allowJs": true
 }
